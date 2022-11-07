@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>User3: </title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <style>
+      table{
+        border: 1px solid black;
+        width: 1230px;
+      }
+      #th1{
+        background-color: rgb(212, 87, 87);
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+   <h1>User3</h1>
+   <a href="form-add"><button>Add</button></a>
+   <table border="1">
+    <tr id="th1">
+      <th>ID</th>
+        <th>IdDistrict</th>
+        <th>IdVillage</th>
+        <th>Address</th>
+        <th>IsGetNotification</th>
+        <th>IsVerified</th>
+        <th>IsGetOpen</th>
+        <th>ACTION</th>
+    </tr>
+      
+      <% User3.forEach(item => { %>
+       <tr>
+        <td><%= item._id %> </td>
+        <td><%= item.idDistrict %> </td>
+        <td><%= item.idVillage %> </td>
+        <td><%= item.address %> </td>
+        <td><%= item.isGetNotification %> </td>
+        <td><%= item.isVerified %> </td>
+        <td><%= item.isGetOpen %> </td>
+        <td><a href="/form-update/<%= item._id %>">Update</a>|| <a href="/form-delete/<%= item._id %>">Delete</a></td>
+       </tr>
+      <% }) %> 
+   </table>
+  </body>
+</html>
